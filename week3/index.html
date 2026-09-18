@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Moon | 포트폴리오 </title>
+    <meta name="description" content="Moon의 개인 소개 및 문의하기 페이지입니다. ai에 의존하지않고 기초가 튼튼한 개발자가 목표입니다.">
+    <meta property="og:title" content="Moon | 포트폴리오">
+    <meta property="og:description" content="Moon의 개인 소개 및 문의하기 페이지입니다.">
+    <meta property="og:url" content="https://iceman231.github.io/web-practice-2026/week3/">
+    
+    <style>
+        body {
+            font-family: "pretendard", "Malgun Gothic", "맑은 고딕", "Apple SD Gothic Neo", "Nanum Gothic", "나눔고딕", sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #222;
+            background-color: #037b3b;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 24px 40px;
+            background-color: #1e1e2f;
+            color: #fff;
+        }
+
+        header img {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+        }
+
+        main {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        section {
+            background-color: #fff;
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 24px;
+            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+        }
+
+        .form-row {
+            margin-bottom: 16px;
+        }
+
+        label {
+            display:block;
+            margin-bottom: 6px;
+            font-weight: bold;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+        }
+
+        button[type="submit"] {
+            padding: 10px 20px;
+            background-color: #4a4ae0;
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #1e1e2f;
+            color: #ccc;
+            font-size: 14px;
+        }
+
+        footer a {
+            color: #9db4ff;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="images/walter_white.jpg" alt="Moon의 프로필 사진">
+        <h1>Moon</h1>
+    </header>
+
+    <main>
+        <section>
+            <h2>소개</h2>
+            <p>안녕하세요, 저는 Moon입니다. 기초가 튼튼한 개발자가 되기 위해 노력하고 있습니다.
+                이 페이지는 저의 개인 소개 및 
+                문의하기를 위한 공간입니다.
+            </p>
+        </section>
+
+        <section>
+            <h2>문의하기</h2>
+            <form action="/contact" method="post">
+                <fieldset>
+                    <legend>아래의 양식을 작성해 주세요</legend>
+
+                    <div class="form-row">
+                        <label for="name">이름</label>
+                        <input type="text" id="name" name="name" placeholder="이름을 입력하세요" required>
+                    </div>
+
+                    <div class="form-row">
+                        <label for="email">이메일</label>
+                        <input type="email" id="email" name="email" placeholder="example@email.com" required>
+                    </div>
+
+                    <div class="form-row">
+                        <label for="inquiry-type">문의 유형</label>
+                        <select id="inquiry-type" name="inquiry-type">
+                            <option value="general" selected>일반 문의</option>
+                            <option value="project">프로젝트 제안</option>
+                            <option value="collab">협업 제안</option>
+                            <option value="etc">기</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-row">
+            <label for="message">문의 내용</label>
+            <textarea id="message" name="message" rows="5" cols="40" placeholder="문의하실 내용을 입력해 주세요" required></textarea>
+                    </div>
+
+          <button type="submit">보내기</button>
+        </fieldset>
+      </form>
+    </section>
+
+  </main>
+
+
+  <footer>
+    <p>&copy; 2026. All rights reserved.</p>
+    <p><a href="mailto:anstjdgh112@gmail.com">anstjdgh112@gmail.com</a></p>
+  </footer>
+
+</body>
+</html>
