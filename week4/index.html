@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>나만의 프로필 카드 - Week 4</title>
+
+    <style>
+      
+      @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap');
+
+      
+      body {
+        font-family: 'Noto Sans KR', sans-serif;
+        font-size: 18px;
+        font-weight: 300;
+        line-height: 1.5;
+        color: #222;
+        margin: 20px;
+      }
+
+      
+      .page-header {
+        box-sizing: border-box;
+        width: 100%;
+        height: 180px;
+        padding: 20px;
+        border: 2px solid #808000;
+        margin: 0 0 20px 0;
+        border-radius: 16px;
+        text-align: center;
+      }
+
+      
+      .page-header > h1 {
+        font-size: 36px;
+        font-weight: bold;
+        letter-spacing: 0.05em;
+        margin: 0 0 10px 0;
+      }
+
+      
+      .subtitle {
+        font-style: italic;
+        word-spacing: 0.1em;
+        color: #808000;
+      }
+
+      
+      .content-section {
+        padding: 20px;
+        border: 1px solid #ccc;
+        margin: 0 0 20px 0;
+        border-radius: 16px;
+      }
+
+      .content-section h2 {
+        font-size: 24px;
+        color: #808000;
+        margin: 0 0 20px 0;
+      }
+      .content-section h2 {
+        font-size: 24px;
+        color: #808000;
+        margin: 0 0 20px 0;
+      }
+
+      p {
+        text-align: left;
+        margin: 10px 0;
+      }
+
+      
+      li em {
+        font-weight: bold;
+        text-decoration: underline;
+      }
+
+      li {
+        margin: 0 0 20px 0;
+      }
+
+      
+      table {
+        width: 100%;
+        border: 1px solid #222;
+        border-collapse: collapse;
+      }
+
+      th, td {
+        border: 1px solid #222;
+        padding: 10px;
+        text-align: left;
+      }
+
+      th {
+        background-color: #ccc;
+      }
+
+      
+      .page-footer {
+        font-size: 14px;
+        text-align: center;
+        padding: 20px;
+        margin: 20px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="page-header">
+      <h1>HTML</h1>
+      <span class="subtitle">Hyper Text Markup Language</span>
+    </header>
+    <main>
+      <section class="content-section">
+        <h2>소개</h2>
+        <p>
+          안녕하세요, 저는 Moon입니다. 기초가 튼튼한 개발자가 되기 위해 노력하고 있습니다. 
+          이 페이지는 저의 개인 소개 및 문의하기를 위한 공간입니다.
+          <strong>"기초가 튼튼하다는것은 CS 지식을 의미합니다"</strong> 라고 보시면 될
+          것 같습니다.
+          이 문서는 지금이 끝이 아니라 기초웹개발론에서 배운 내용을 바탕으로 계속 업데이트 될 예정입니다.
+        </p>
+      </section>
+
+      <section class="content-section">
+        <h2>글꼴 태그</h2>
+        <ul>
+          <li>
+            <em>h1 ~ h6</em>
+            <p>
+              웹 페이지의 제목 또는 부제목을 표현할 때 사용하며, 숫자가 작을
+              수록 큰 제목을 표시하는 데 사용합니다.
+            </p>
+          </li>
+          <li>
+            <em>p</em>
+            <p>하나의 문단을 표시할 때 사용합니다.</p>
+          </li>
+          <li>
+            <em>em</em>
+            <p>텍스트를 이텔릭체로 강조할 때 사용합니다.</p>
+          </li>
+          <li>
+            <em>strong</em>
+            <p>텍스트를 진하게 강조할 때 사용합니다.</p>
+          </li>
+        </ul>
+      </section>
+
+      <section class="content-section">
+        <h2>시멘틱 태그</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>요소명</th>
+              <th>설명</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>header</td>
+              <td>
+                페이지에 대한 정보를 담는 태그로, 페이지 상단에 위치합니다.
+              </td>
+            </tr>
+            <tr>
+              <td>main</td>
+              <td>
+                문서의 body 요소의 주 콘텐츠(main content)를 정의할 때
+                사용합니다.
+              </td>
+            </tr>
+            <tr>
+              <td>footer</td>
+              <td>
+                주로 저작권 정보나 서비스 제공자 정보등을 나타내며 사이트 하단에
+                위치합니다.
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+    </main>
+    <footer class="page-footer">
+      <small>Copyright &copy; 기초웹개발론 4주차 문성호</small>
+    </footer>
+  </body>
+</html>
