@@ -1,0 +1,85 @@
+/* 기본 여백과 박스 크기 설정 */
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 110px; }
+body { margin: 0; color: #302b26; background: #faf8f4; font-family: "맑은 고딕", "Malgun Gothic", sans-serif; line-height: 1.6; }
+h1, h2, p, ul, dl, dd { margin: 0; }
+ul { padding: 0; list-style: none; }
+a { color: inherit; text-decoration: none; }
+a:focus-visible { outline: 3px solid #9b5839; outline-offset: 5px; }
+
+/* 체크 1: 외부 스타일시트를 index.html의 link 태그로 연결 */
+/* 체크 2: sticky + z-index, Flex로 헤더의 세 영역 배치 */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  min-height: 88px;
+  padding: 18px max(5%, calc((100% - 1120px) / 2));
+  border-bottom: 1px solid #e7e0d7;
+  background: #faf8f4;
+}
+h1 { font-size: 25px; letter-spacing: -1px; white-space: nowrap; }
+nav ul { display: flex; gap: 32px; }
+nav a { display: inline-block; padding: 8px 0; font-size: 14px; font-weight: 700; }
+nav a:hover { color: #9b5839; }
+.cart { font-size: 13px; white-space: nowrap; border: 1px solid #d7cec2; padding: 8px 15px; border-radius: 24px; }
+
+/* 체크 3: background 단축 속성 + 그라디언트, 상하좌우 중앙 정렬 */
+#hero {
+  min-height: 370px;
+  padding: 64px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: radial-gradient(ellipse at 85% 20%, #f4e9d5 0%, transparent 60%), linear-gradient(120deg, #d9c6ad, #eee2cf 55%, #c7b395);
+}
+.eyebrow { font-size: 11px; font-weight: 700; letter-spacing: 3px; color: #77543c; }
+#hero h2 { margin: 16px 0 10px; font-size: 44px; letter-spacing: -2px; }
+#hero p { color: #605143; font-size: 16px; }
+.shop-button { display: inline-flex; gap: 32px; align-items: center; margin-top: 28px; padding: 12px 24px; background: #443a30; color: #fff; font-size: 14px; }
+.shop-button:hover { background: #765238; }
+
+#products { max-width: 1120px; margin: 0 auto; padding: 58px 0 72px; }
+.section-heading { display: flex; align-items: flex-end; justify-content: space-between; gap: 16px; margin-bottom: 28px; }
+.section-heading h2 { margin-top: 6px; font-size: 27px; letter-spacing: -1px; }
+.section-heading > p { color: #786d61; font-size: 13px; }
+/* 체크 4: Grid로 상품 목록 배치 */
+#products ul { display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px 22px; }
+/* 체크 5: relative인 상품을 기준으로 absolute 배지를 왼쪽 상단에 표시 */
+#products li { position: relative; min-width: 0; }
+#products img { display: block; width: 100%; aspect-ratio: 3 / 2; object-fit: cover; background: #e5ddd1; margin-bottom: 15px; }
+#products strong { display: block; font-size: 15px; font-weight: 600; margin-bottom: 4px; }
+#products li > span:not(.badge) { font-size: 14px; color: #78604c; }
+.badge { position: absolute; top: 12px; left: 12px; z-index: 1; background: #4e5b45; color: #fff; padding: 4px 9px; font-size: 10px; font-weight: 700; letter-spacing: 1px; }
+.badge.sale { background: #9a4938; }
+footer { display: flex; align-items: flex-start; justify-content: space-between; gap: 24px; padding: 32px max(5%, calc((100% - 1120px) / 2)); border-top: 1px solid #e1d9cd; background: #f0ece5; color: #74695d; }
+footer small { font-size: 12px; }
+footer dl { display: grid; grid-template-columns: auto 1fr; gap: 5px 18px; font-size: 12px; }
+footer dt { font-weight: 700; }
+
+/* 화면이 좁아지면 상품 열 수와 헤더 배치를 조절 */
+@media (max-width: 1200px) { #products { margin: 0 5%; } }
+@media (max-width: 800px) {
+  header { flex-wrap: wrap; gap: 10px; padding: 16px 5%; }
+  nav { order: 3; width: 100%; }
+  nav ul { justify-content: center; gap: 32px; }
+  #products ul { grid-template-columns: repeat(2, 1fr); }
+  #hero h2 { font-size: 34px; }
+  html { scroll-padding-top: 145px; }
+  footer { flex-direction: column; }
+}
+@media (max-width: 420px) {
+  #hero { min-height: 320px; }
+  #hero h2 { font-size: 29px; }
+  .section-heading { align-items: flex-start; flex-direction: column; }
+  #products ul { gap: 24px 14px; }
+  #products strong { font-size: 13px; }
+  .badge { top: 8px; left: 8px; }
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
